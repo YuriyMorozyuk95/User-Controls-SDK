@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0956C79-3E02-4B27-8937-C89E2DDC720E}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CxControlLibrary</RootNamespace>
+    <AssemblyName>CxControlLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddUserButton.xaml.cs">
+      <DependentUpon>AddUserButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoCompleteEntry.cs" />
+    <Compile Include="AutoCompleteTextBox.xaml.cs">
+      <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CheckBoxes.xaml.cs">
+      <DependentUpon>CheckBoxes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClassificationBar.xaml.cs">
+      <DependentUpon>ClassificationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClassificationList.xaml.cs">
+      <DependentUpon>ClassificationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CxComboBox.xaml.cs">
+      <DependentUpon>CxComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomEventArgs.cs" />
+    <Compile Include="CustomMessageBox.cs" />
+    <Compile Include="CxComboBoxItem.cs" />
+    <Compile Include="CxListBox.xaml.cs">
+      <DependentUpon>CxListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CxListBoxItem.xaml.cs">
+      <DependentUpon>CxListBoxItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CxMessageBox.xaml.cs">
+      <DependentUpon>CxMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ICxButton.cs" />
+    <Compile Include="CxRoundButton.xaml.cs">
+      <DependentUpon>CxRoundButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CxObjectList.xaml.cs">
+      <DependentUpon>CxObjectList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectListItem.xaml.cs">
+      <DependentUpon>ObjectListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CxxDialog.xaml.cs">
+      <DependentUpon>CxxDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presenter.cs" />
+    <Compile Include="RadioButtons.xaml.cs">
+      <DependentUpon>RadioButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchExeption.cs" />
+    <Compile Include="SearchTextBoxControl.cs" />
+    <Compile Include="SearchTextBox\ListBoxEx.cs" />
+    <Compile Include="SearchTextBox\NonUnique.cs" />
+    <Compile Include="SearchTextBox\SearchTextBox.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="ShadowOptions.cs" />
+    <Compile Include="TestListBox.xaml.cs">
+      <DependentUpon>TestListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CxTextBox.xaml.cs">
+      <DependentUpon>CxTextBox.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddUserButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoCompleteTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CheckBoxes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClassificationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClassificationButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="ClassificationButton.xaml.cs">
+      <DependentUpon>ClassificationButton.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ClassificationButtonCollection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClassificationList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CxComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CxListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CxListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CxMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CxRoundButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CxObjectList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ObjectListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CxxDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RadioButtons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScrollDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchTextBox\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SearchTextBox\Themes\ListBoxEx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CxTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassificationButtonCollection.xaml.cs">
+      <DependentUpon>ClassificationButtonCollection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Resource Include="Fonts\Roboto-Black.ttf" />
+    <Resource Include="Fonts\Roboto-BlackItalic.ttf" />
+    <Resource Include="Fonts\Roboto-Bold.ttf" />
+    <Resource Include="Fonts\Roboto-BoldItalic.ttf" />
+    <Resource Include="Fonts\Roboto-Italic.ttf" />
+    <Resource Include="Fonts\Roboto-Light.ttf" />
+    <Resource Include="Fonts\Roboto-LightItalic.ttf" />
+    <Resource Include="Fonts\Roboto-Medium.ttf" />
+    <Resource Include="Fonts\Roboto-MediumItalic.ttf" />
+    <Resource Include="Fonts\Roboto-Regular.ttf" />
+    <Resource Include="Fonts\Roboto-Thin.ttf" />
+    <Resource Include="Fonts\Roboto-ThinItalic.ttf" />
+    <Resource Include="Fonts\RobotoCondensed-Bold.ttf" />
+    <Resource Include="Fonts\RobotoCondensed-BoldItalic.ttf" />
+    <Resource Include="Fonts\RobotoCondensed-Italic.ttf" />
+    <Resource Include="Fonts\RobotoCondensed-Light.ttf" />
+    <Resource Include="Fonts\RobotoCondensed-LightItalic.ttf" />
+    <Resource Include="Fonts\RobotoCondensed-Regular.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\ClassificationButtonCollection\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\MainButton\ProtectAndSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\MainButton\DisabledButton.png" />
+    <Resource Include="Icon\MainButton\HoverButton.png" />
+    <Resource Include="Icon\MainButton\PressedButton.png" />
+    <Resource Include="Icon\MainButton\RegularButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\RoundButton\DissabledRB.png" />
+    <Resource Include="Icon\RoundButton\PressedRB.png" />
+    <Resource Include="Icon\RoundButton\RegularAndHoverRB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\AddUserButton\AddUserDissavled.png" />
+    <Resource Include="Icon\AddUserButton\AddUserHover.png" />
+    <Resource Include="Icon\AddUserButton\AddUserPressed.png" />
+    <Resource Include="Icon\AddUserButton\AddUserRegular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\CheckBoxes\ChekedChekBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\RadioButtons\RadioChekBox .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Thumb\ThumbDissable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Thumb\ThumbHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Thumb\ThumbPressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Thumb\ThumbRegular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\ObjectListItem\IconObjectListItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SearchTextBox\Images\Group copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SearchTextBox\Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SearchTextBox\Images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Dialog\WindowExpander.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Dialog\TitleMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIControls\SearchTextBox.csproj">
+      <Project>{a3082956-9ee4-4b35-9b4e-b07d0c4c8b56}</Project>
+      <Name>SearchTextBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\RoundButton\Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\RoundButton\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\CxListBox1\Group copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\CxListBox1\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\CxListBox1\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\CxListBox1\ArrowCxList.png" />
+    <Resource Include="Icon\CxComboBox\ArrowBlue.png" />
+    <Resource Include="Icon\CxComboBox\ArrowGray.png" />
+    <Resource Include="Icon\ClassificationBar\Layer 5.png" />
+    <Resource Include="Icon\ClassificationBar\details %281%29.png" />
+    <Resource Include="Icon\ClassificationBar\new.png" />
+    <Resource Include="Icon\ClassificationBar\protect attachment.png" />
+    <Resource Include="Icon\ClassificationBar\protect and send %282%29.png" />
+    <Content Include="Icon\ClassificationButtonCollection\RedMark.png" />
+    <Resource Include="Icon\Dialog\ExitButtonDisabled.png" />
+    <Resource Include="Icon\Dialog\ExitButtonHover.png" />
+    <Resource Include="Icon\Dialog\ExitButtonPressed.png" />
+    <Resource Include="Icon\Dialog\ExitButtonRegular.png" />
+    <Resource Include="Icon\ClassificationButtonCollection\AzurBlueMark.png" />
+    <Resource Include="Icon\ClassificationButtonCollection\GrenBlueMark.png" />
+    <Resource Include="Icon\ClassificationButtonCollection\OrMark.png" />
+    <Resource Include="Icon\ClassificationButtonCollection\OrYelMark.png" />
+    <Resource Include="Icon\ClassificationButtonCollection\WhiteMark.png" />
+    <Resource Include="Icon\ClassificationButtonCollection\YelMark.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

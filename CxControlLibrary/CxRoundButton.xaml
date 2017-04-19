@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="CxControlLibrary.CxRoundButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CxControlLibrary"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" d:DesignWidth="145">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Roboto" />
+        </Style>
+    </UserControl.Resources>
+    <Button Name="ThisButton" 
+            Click="ThisButton_Click"
+            MouseEnter="ThisButton_MouseEnter"
+            MouseLeave="ThisButton_MouseLeave">
+        <Button.Template>
+
+            <ControlTemplate>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <!-- if text=="" height = 30 -->
+                        <RowDefinition Height="{Binding Path=HeightButton,Mode=TwoWay}" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <!-- if text=="" width = 0 else 115 -->
+                        <ColumnDefinition Name="StringContainer"  Width="{Binding Path=WidthButton,Mode=TwoWay}"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Border Name="MainButtonBorder"
+                            Grid.ColumnSpan="2"
+                            Background="{Binding Path=BackgroundRegular,Mode=TwoWay}"
+                            CornerRadius="20">
+                    </Border>
+
+
+                    <Image Name="ImageIcon" Source="{Binding Path=IconRegular,Mode=TwoWay}" 
+                           Grid.Column="0" 
+                           Width="17"
+                           Height="17"
+                           Margin="{Binding Path=MarginImage,Mode=TwoWay}"
+                           /> <!--"bind-->
+                    <TextBlock x:Name="ContentText"
+                    Text="{Binding Path=Label,Mode=TwoWay}"
+                           Grid.Column="1"
+                           Foreground="{Binding Path=CxForeground,Mode=TwoWay}"
+                           Width="92"
+                           Height="19"
+                           FontSize="14"
+                           LineHeight=" 29.835"/>
+<!--"Protect &amp; Save"-->
+                </Grid>
+                    
+                <ControlTemplate.Triggers>
+                    <!--Hover-->
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter TargetName="MainButtonBorder" 
+                                Property="Background" 
+                                Value="{Binding Path=BackgroundHover,Mode=TwoWay}"/>
+                        <Setter TargetName="ImageIcon" 
+                                Property="Source" 
+                                Value="{Binding Path=IconHover,Mode=TwoWay}"/>
+                    </Trigger>
+
+                    <Trigger Property="Button.IsPressed" Value="True">
+                        <Setter TargetName="MainButtonBorder" 
+                                Property="Background" 
+                                Value="{Binding Path=BackgroundPressed,Mode=TwoWay}"/>
+                        <Setter TargetName="ImageIcon" 
+                                Property="Source" 
+                                Value="{Binding Path=IconPressed,Mode=TwoWay}"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Button.Template>
+    </Button>
+</UserControl>

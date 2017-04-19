@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="CxControlLibrary.ClassificationBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CxControlLibrary"
+             mc:Ignorable="d" 
+             d:DesignHeight="64" 
+             d:DesignWidth="1400"
+             MinHeight="64"
+             
+             MinWidth="1024"
+             MaxHeight="64" 
+             
+             >
+
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Roboto" />
+        </Style>
+    </UserControl.Resources>
+    
+    <ToolBar Background="#3d4653" >
+        <Grid Name="IconPanel"
+              Height="50"
+              Width="50">
+            
+            <Image Source="Icon\ClassificationBar\Layer 5.png" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   Height="23"
+                   Width="23"/>
+        </Grid>
+        <Separator/>
+        <StackPanel Name="ClassificationPanel" Orientation="Horizontal">
+
+            <TextBlock VerticalAlignment="Center"
+                       Foreground="#b7b7b7"
+                       Margin="10,0,10,0"
+                       TextWrapping="WrapWithOverflow"
+                       FontSize="10"
+                       Width="83"
+                       Height="32"
+                       >
+                <Run Name="EmailBody" Text="EMAIL BODY" />
+                <Run Name="Classification" Text="CLASIFFICATION" />
+            </TextBlock>
+
+            <local:ClassificationButtonCollection x:Name="CxClasificationButtonCollection"
+                                              ShowLabel="False"/>
+        </StackPanel>
+        <Separator/>
+        <StackPanel Name="PolicyPanel"
+            Orientation="Horizontal">
+            
+            <TextBlock Text="POLICY"
+                       VerticalAlignment="Center"
+                       Foreground="#b7b7b7"
+                       Margin="10"
+                       Name="Policy"/>
+            
+            <local:CxComboBox x:Name="RectangleComboBox"
+                              CxWidth="122"
+                              CxHeight="28"
+                              CxStype="Rectangle"
+                             
+                              
+                              Margin="10"
+                              InBar ="True"
+                              VerticalAlignment="Center"
+                              /> <!--ArrowColor="Gray"-->
+            
+            <local:CxRoundButton x:Name="OpeningBarButton" 
+                                 Label=""
+                                 BackgroundDisabled="White"
+                                 BackgroundHover="White"
+                                 BackgroundPressed="White"
+                                 BackgroundRegular="White"
+                                 IconDisabled="Icon\ClassificationBar\details (1).png"
+                                 IconHover="Icon\ClassificationBar\details (1).png"
+                                 IconPressed="Icon\ClassificationBar\details (1).png"
+                                 Margin="10"
+                                 VerticalAlignment="Center"
+                                 />
+            
+            <local:CxRoundButton x:Name="AddBarButton" 
+                                 Label=""
+                                 BackgroundDisabled="White"
+                                 BackgroundHover="White"
+                                 BackgroundPressed="White"
+                                 BackgroundRegular="White"
+                                 
+                                 IconDisabled="Icon\ClassificationBar\new.png"
+                                 IconHover="Icon\ClassificationBar\new.png"
+                                 IconPressed="Icon\ClassificationBar\new.png"
+                                 IconRegular="Icon\ClassificationBar\new.png"
+                                 
+                                 Margin="10"
+                                 VerticalAlignment="Center"
+                                 />
+            
+            <local:CxRoundButton x:Name="LabelBarButton" 
+                                 Label="" 
+                                 BackgroundDisabled="White"
+                                 BackgroundHover="White"
+                                 BackgroundPressed="White"
+                                 BackgroundRegular="White"
+                                 
+                                 
+                                 IconDisabled="Icon\ClassificationBar\protect attachment.png"
+                                 IconHover="Icon\ClassificationBar\protect attachment.png"
+                                 IconPressed="Icon\ClassificationBar\protect attachment.png"
+                                 IconRegular="Icon\ClassificationBar\protect attachment.png"
+                                 
+                                 Margin="10"
+                                 VerticalAlignment="Center"
+                                 />
+            
+            <local:CxComboBox x:Name="RoutedComboBox"
+                              CxWidth="111"
+                              CxHeight="30"
+                              CxStype="Round"
+                              
+                              InBar ="True"
+                              Margin="10"
+                              VerticalAlignment="Center"
+                              
+                              /><!--ArrowColor="Blue"-->
+        </StackPanel>
+        <Separator/>
+            <local:CxRoundButton x:Name="MessageBarButton"  
+                                 Label="" 
+                                 IconDisabled="Icon\ClassificationBar\protect and send (2).png"
+                                 IconHover="Icon\ClassificationBar\protect and send (2).png"
+                                 IconPressed="Icon\ClassificationBar\protect and send (2).png"
+                                 IconRegular="Icon\ClassificationBar\protect and send (2).png"
+                                 
+                                 Margin="10"
+                                 VerticalAlignment="Center"
+                                 />
+    </ToolBar>
+</UserControl>

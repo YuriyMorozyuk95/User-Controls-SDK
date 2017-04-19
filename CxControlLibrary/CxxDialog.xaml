@@ -1,0 +1,190 @@
+﻿<Window x:Class="CxControlLibrary.CxxDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CxControlLibrary"
+        xmlns:SerchControl="clr-namespace:UIControls;assembly=SearchTextBox"
+         mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        
+        Title="PresentationWindow" 
+        Background="#EBF3F8"
+        
+        
+        MinHeight="316"
+        Height="175"
+        
+        MinWidth="571"
+        Width="571"
+        
+        SizeChanged="Window_SizeChanged"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Name="HeightListChanged" Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        
+        <!--Row 0-->
+        <StackPanel Grid.Row="0"
+                    Name="CxDialogTitle"
+                    Height="36"
+                    Background="#323a45"
+                    Orientation="Horizontal" 
+                    MouseDown="CxDialogTitle_MouseDown"
+                    >
+
+            <Image Source="Icon\Dialog\TitleMark.png"
+                   Width="21"
+                   Height="21"
+                   Margin="5,0,0,0"
+                   Name="ImageIcon"/>
+            <Separator Name="SeparatorTitle" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5 " />
+            <TextBlock Name="TitleText"
+                       Text="Convertix Project 14 Plan Vr06.xlsx"
+                       Foreground="White" 
+                       FontSize="12" 
+                       LineHeight="29.835px" 
+                       HorizontalAlignment="Center" 
+                       Margin="5,10,0,-10"
+                       Width="505"/>
+
+            <Button Name="ExitButton" 
+                    Width="34" 
+                    Height="36" 
+                    Background="#323a45"
+                    HorizontalAlignment="Right"  
+                    Click="ExitButton_Click">
+
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Name="Icon" 
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Height="14"
+                               Width="14"
+                               Source="Icon\Dialog\ExitButtonRegular.png"
+                               />
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="Button.IsMouseOver" Value="True">
+                                <Setter TargetName="Icon"
+                                            Property="Source"
+                                            Value="Icon\Dialog\ExitButtonHover.png" />
+                            </Trigger>
+
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="Icon"
+                                            Property="Source"
+                                            Value="Icon\Dialog\ExitButtonPressed.png"/>
+                            </Trigger>
+
+                            <Trigger Property="Button.IsEnabled" Value="False">
+                                <Setter TargetName="Icon"
+                                            Property="Source"
+                                            Value="Icon\Dialog\ExitButtonDisabled.png"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+        </StackPanel>
+        <!--Row 1-->
+        <local:ClassificationButtonCollection Grid.Row="1"
+               x:Name="CxClassificationCollection"               
+               Background="#3d4653"
+               CxSelectionChanged="CxClassificationCollection_CxSelectionChanged" 
+               HorizontalAlignment="Stretch"/>
+        <!--Row 2-->
+        <local:CxObjectList Grid.Row="2"
+                            x:Name="CxObjectList"                            
+                            Height="0"/>
+        <!--Row 3-->
+        <StackPanel Grid.Row="3" 
+                        Orientation="Horizontal">
+
+            <local:CxTextBox />
+
+            <local:CxRoundButton x:Name="DiscloseButton"
+                                  Label="" 
+                                  Margin="25,10,0,0"
+                                  CxClick="DiscloseButton_CxClick" />
+
+
+            <local:CxRoundButton x:Name="PlusButton"
+                                  Label="" 
+                                  Margin="10,10,0,0" />
+        </StackPanel>
+        <!--Row 4-->
+        <local:CxListBox Grid.Row="4"
+                             x:Name="CxLists"
+                             Height="0" 
+                             Margin="0,1,0,1"
+                             Width="auto"/>
+        <!--Row 5-->
+        <Border  Grid.Row="5"
+                 BorderBrush="#d0d0d0" 
+                 BorderThickness="3" 
+                 Padding="0" 
+                 Height="60" 
+                 Margin="10"
+                 Name="BorderConditions">
+
+            <StackPanel Margin="10"
+                            VerticalAlignment="Center">
+                <TextBlock FontFamily="Roboto">
+                            <Run Foreground="#636363"
+                                 FontSize="12"
+                                 Text="CONDITIONS &#45; "/>
+                            <Run Foreground="#2e80ae" 
+                                 FontSize="12"
+                                 Text="Copy"/>
+                </TextBlock>
+                <TextBlock>
+                            <Run Foreground="#636363"
+                                 FontSize="12"
+                                 Text="Only on desktop &#45; "/>
+                            <Run Foreground="#636363" 
+                                 FontSize="12"
+                                 Text="no change of file name"/>
+                </TextBlock>
+            </StackPanel>
+
+        </Border>
+        <!--Row 6-->
+        <StackPanel Grid.Row="6"
+            HorizontalAlignment="Right"
+            Name="BottomStakPanel">
+            <local:CxRoundButton x:Name="SaveButton"
+            		HorizontalAlignment="Right"
+            		VerticalAlignment="Bottom"
+            		/>
+            
+            
+            
+
+            <Image Source="Icon\Dialog\WindowExpander.png"
+            		Width="9"
+            		Height="9" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Right"
+                    Margin="0,10,0,0"/>
+
+        </StackPanel>
+        
+        
+    </Grid>
+</Window>
+

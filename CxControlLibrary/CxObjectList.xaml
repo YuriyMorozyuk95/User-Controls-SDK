@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="CxControlLibrary.CxObjectList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CxControlLibrary"
+             mc:Ignorable="d" 
+             d:DesignHeight="142" d:DesignWidth="570"
+             Height="142" Width="570"
+             Background="#ffffff">
+    <UserControl.Resources>
+        <ResourceDictionary  Source="ScrollDictionary.xaml">
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+       
+
+        <local:CheckBoxes Grid.Column="0" 
+                          Margin="11,0,0,0"
+                          x:Name="TitleCheckBox"
+                          CxCheked="TitleCheckBox_CxCheked"
+                          CxUnCheked="TitleCheckBox_CxUnCheked"/>
+
+            <TextBlock Name="TitleAttachentName" 
+                   Grid.Column="1" 
+                   Text="ATTACHENT NAME(Choose attachemt to edit)"
+                       Width="289">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontFamily" Value="Roboto" />
+                        <Setter Property="Foreground" Value="#3d4653" />
+                        <Setter Property="FontSize" Value="10" />
+                        <Setter Property="LineHeight" Value="29.835px" />
+                        <Setter Property="Margin" Value="4,7,0,-10" />
+                        <Setter Property="FontWeight" Value="ExtraBlack"/>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBlock Grid.Column="2" 
+                   Text="POLICY"
+                   Name="TitlePolicy" Margin="15,7,0,-10">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontFamily" Value="Roboto" />
+                        <Setter Property="Foreground" Value="#3d4653" />
+                        <Setter Property="FontSize" Value="10" />
+                        <Setter Property="LineHeight" Value="29.835px" />
+                        <Setter Property="Margin" Value="4,7,0,-10" />
+                        <Setter Property="FontWeight" Value="ExtraBlack"/>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </Grid>
+
+        <!--List-->
+        <ListBox Name="ListObjects" 
+                 Grid.Row="1"
+                 SelectionChanged="ListObjects_SelectionChanged"
+                 Background="Transparent"
+                 >
+
+        </ListBox>
+    </Grid>
+</UserControl>

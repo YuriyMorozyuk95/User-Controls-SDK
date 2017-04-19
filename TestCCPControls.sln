@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCCPControls", "TestCCPControls\TestCCPControls.csproj", "{CCEEEE2B-23A1-442D-92B7-9988C82B6503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CxControlLibrary", "CxControlLibrary\CxControlLibrary.csproj", "{D0956C79-3E02-4B27-8937-C89E2DDC720E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchTextBox", "UIControls\SearchTextBox.csproj", "{A3082956-9EE4-4B35-9B4E-B07D0C4C8B56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTest", "ControlTest\ControlTest.csproj", "{489A6625-9108-4E79-979F-95E1E44D5907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCEEEE2B-23A1-442D-92B7-9988C82B6503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCEEEE2B-23A1-442D-92B7-9988C82B6503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCEEEE2B-23A1-442D-92B7-9988C82B6503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCEEEE2B-23A1-442D-92B7-9988C82B6503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0956C79-3E02-4B27-8937-C89E2DDC720E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0956C79-3E02-4B27-8937-C89E2DDC720E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0956C79-3E02-4B27-8937-C89E2DDC720E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0956C79-3E02-4B27-8937-C89E2DDC720E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3082956-9EE4-4B35-9B4E-B07D0C4C8B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3082956-9EE4-4B35-9B4E-B07D0C4C8B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3082956-9EE4-4B35-9B4E-B07D0C4C8B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3082956-9EE4-4B35-9B4E-B07D0C4C8B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{489A6625-9108-4E79-979F-95E1E44D5907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{489A6625-9108-4E79-979F-95E1E44D5907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{489A6625-9108-4E79-979F-95E1E44D5907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{489A6625-9108-4E79-979F-95E1E44D5907}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://struggleendlessly.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ControlTest\\ControlTest.csproj
+		SccProjectName1 = ControlTest
+		SccLocalPath1 = ControlTest
+		SccProjectUniqueName2 = CxControlLibrary\\CxControlLibrary.csproj
+		SccProjectName2 = CxControlLibrary
+		SccLocalPath2 = CxControlLibrary
+		SccProjectUniqueName3 = TestCCPControls\\TestCCPControls.csproj
+		SccProjectName3 = TestCCPControls
+		SccLocalPath3 = TestCCPControls
+		SccProjectUniqueName4 = UIControls\\SearchTextBox.csproj
+		SccProjectName4 = UIControls
+		SccLocalPath4 = UIControls
+	EndGlobalSection
+EndGlobal

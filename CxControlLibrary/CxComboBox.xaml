@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="CxControlLibrary.CxComboBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CxControlLibrary"
+             mc:Ignorable="d" 
+
+             Height="25"
+             Width="100" 
+             Background="Transparent"
+             Name="This">
+    <UserControl.Resources>
+        <Style TargetType="ComboBoxItem">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#c6e9fd"/>
+                </Trigger>
+                <!--<Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#c6e9fd"/>
+                </Trigger>-->
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border 
+            BorderBrush="{Binding Background,ElementName=PanelBack}"  
+            Background="{Binding Background,ElementName=PanelBack}"
+            BorderThickness="0" 
+            Name="RoundBorder"
+            CornerRadius="15"
+            Padding="4">
+        <Grid Name="PanelBack" Height="20" Background="White"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <ComboBox Name="CombBox"
+                          BorderThickness="0"                        
+                          Background="{Binding Background,ElementName=PanelBack}"
+                          Foreground="{Binding Foreground,ElementName=PanelBack}" 
+                          BorderBrush="{Binding Background,ElementName=PanelBack}" 
+                          HorizontalContentAlignment="Center"
+                          Height="20"
+                          Grid.ColumnSpan="2"
+                          />
+            <local:AutoCompleteTextBox x:Name="AutoCompliteTB" 
+                                           HorizontalAlignment="Center"
+                                           Height="30"
+                                           BorderThickness="1" 
+                                           Foreground="Black"
+                                           Background="{Binding Background,ElementName=PanelBack}"
+                                           Visibility="Collapsed" />
+
+
+            <Image Grid.Column="1"
+                           Name="Arrow"
+                           Height="9"
+                           Width="13"
+                           Source="Icon\CxComboBox\ArrowBlue.png"
+                           Opacity="1"
+                           MouseLeftButtonDown="Arrow_MouseLeftButtonDown" 
+                           Panel.ZIndex="1" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                            Margin="0,0,2,0"
+                           />
+            <TextBlock Grid.Column="1"
+                           Name="ArrowBackground"
+
+                           Background="{Binding Background,ElementName=PanelBack}"
+                           Opacity="1"
+                           Panel.ZIndex="0"
+                           MouseLeftButtonDown="Arrow_MouseLeftButtonDown" 
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Stretch" 
+                       
+                           />
+        </Grid>
+    </Border>
+</UserControl>

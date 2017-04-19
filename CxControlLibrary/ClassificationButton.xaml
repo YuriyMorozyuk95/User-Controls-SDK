@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="CxControlLibrary.ClassificationButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CxControlLibrary"
+             mc:Ignorable="d" 
+             Height="64"
+             Width="75"
+             
+             Background="Transparent">
+    <Button Name="ThisButton" MouseLeave="StackPanel_MouseLeave" 
+                MouseRightButtonDown="StackPanel_MouseRightButtonDown" 
+                MouseRightButtonUp="ThisButton_MouseRightButtonUp"
+                MouseEnter="StackPanel_MouseEnter"
+                Click="Button_Click"
+                MouseDoubleClick="Button_MouseDoubleClick"
+                Background="Transparent">
+        <Button.Template>
+            <ControlTemplate>
+                <StackPanel HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                >
+                    <Image x:Name="MarkImage" 
+                               
+                               Source="{Binding Path=MarkImage,Mode=TwoWay}"
+                               HorizontalAlignment="Center" 
+                               Width="13" 
+                               Height="13"  
+                               
+                               Visibility="{Binding Path=VisibilityMark,Mode=TwoWay}"
+                   />
+                    <Rectangle x:Name="Line" 
+                               Width="62" 
+                               Height="4" 
+                               HorizontalAlignment="Center" 
+                               Margin="1"
+                               Fill="{Binding Path=ColorRect,Mode=TwoWay}"
+                               Visibility="{Binding Path=VisibilityLine,Mode=TwoWay}"          
+                   />
+                    <TextBlock Name="ContentText"
+                              
+                               Foreground="#f8f8f8"
+                               FontFamily="Roboto"
+                               FontSize="11"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"
+                               Text="{Binding Path=ContentText,Mode=TwoWay}"
+                               Width="66"
+                               Height="30"          
+                   /> 
+                </StackPanel>
+            </ControlTemplate>
+        </Button.Template>
+    </Button>
+</UserControl>

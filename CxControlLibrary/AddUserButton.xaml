@@ -1,0 +1,77 @@
+﻿<UserControl x:Name="userControl" x:Class="CxControlLibrary.AddUserButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CxControlLibrary"
+             mc:Ignorable="d" 
+             d:DesignHeight="43" d:DesignWidth="45"
+             Height="43" Width="45">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Roboto" />
+        </Style>
+    </UserControl.Resources>
+    <Button Name="ThisButton" Width="{Binding Width, ElementName=userControl}" Height="{Binding Height, ElementName=userControl}"
+            Click="ThisButton_Click">
+        <Button.Template>
+
+            <ControlTemplate>
+                <Grid>
+                    <Border Name="MainButtonBorder"
+                            Grid.ColumnSpan="2"
+                            BorderBrush="#2e80ae"
+                            BorderThickness="2"
+                            Background="#ebf3f8"
+                            >
+                    </Border>
+
+
+                    <!--<Image Name="ImageIcon" Source="{Binding Path=IconRegular,Mode=TwoWay}" 
+                           Grid.Column="0" 
+                           Width="15"
+                           Height="16"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           />-->
+                    <!--"bind-->
+                    <Image Name="ImageIcon" Source="Icon\AddUserButton\AddUserRegular.png" 
+                           Grid.Column="0" 
+                           Width="15"
+                           Height="16"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           />
+                </Grid>
+
+                <ControlTemplate.Triggers>
+                    <!--<Trigger Property="IsMouseOver" Value="True">
+                        <Setter TargetName="ImageIcon" 
+                                Property="Source" 
+                                Value="{Binding Path=IconHover,Mode=TwoWay}"/>-->
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter TargetName="ImageIcon" 
+                                Property="Source" 
+                                Value="Icon\AddUserButton\AddUserHover.png"/>
+                    </Trigger>
+
+                    <!--<Trigger Property="Button.IsPressed" Value="True">
+                        <Setter TargetName="ImageIcon" 
+                                Property="Source" 
+                                Value="{Binding Path=IconPressed,Mode=TwoWay}"/>-->
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter TargetName="ImageIcon" 
+                                Property="Source" 
+                                Value="Icon\AddUserButton\AddUserPressed.png"/>
+                        </Trigger>
+                    <Trigger Property="Button.IsEnabled" Value="false">
+                        <Setter TargetName="ImageIcon" 
+                                Property="Source" 
+                                Value="Icon\AddUserButton\AddUserDissavled.png"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Button.Template>
+
+    </Button>
+</UserControl>

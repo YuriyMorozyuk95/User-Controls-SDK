@@ -1,0 +1,248 @@
+﻿<UserControl x:Class="CxControlLibrary.CxListBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CxControlLibrary"
+             mc:Ignorable="d"
+             Height="264.5"
+             Width="594">
+    <UserControl.Resources>
+        <ResourceDictionary  
+            Source="ScrollDictionary.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="14" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="14" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
+            <RowDefinition Name="RowForList"  Height="*" />
+            <RowDefinition Height="14" />
+        </Grid.RowDefinitions>
+
+
+        <!--Label-->
+        <TextBlock Grid.Row="0" Grid.Column="1"
+                Name="ActionsTextBlock"
+                Foreground="#2e80ae" 
+                FontSize="12"
+                Text="Actions" 
+                 />
+
+        <TextBlock Grid.Row="0" Grid.Column="3"
+                   Name="RolesTextBlock"
+                   >
+                 <Run Name="RolesTextBlockRoles" 
+                      Foreground="#636363"
+                                 FontSize="12"
+                                 Text="ROLES - "/>
+                  <Run Name="RolesTextBlockCopy" 
+                       Foreground="#2e80ae" 
+                                 FontSize="12"
+                                 Text="Copy"/>
+        </TextBlock>
+
+
+        <!--White rectangle-->
+        <Rectangle Grid.Column="1"
+                   Grid.Row="1" 
+                   Grid.RowSpan="2"                    
+                   Fill="White"
+                   >
+            <Rectangle.BitmapEffect>
+                <DropShadowBitmapEffect 
+                        Color="DarkGray" 
+                        Direction="270" 
+                        ShadowDepth="2" 
+                        Softness="0.3" 
+                        Opacity="1"/>
+            </Rectangle.BitmapEffect>
+        </Rectangle>
+
+        <Rectangle Grid.Column="3"
+                   Grid.Row="1" 
+                   Grid.RowSpan="2"                    
+                   Fill="White"
+                   >
+            <Rectangle.BitmapEffect>
+                <DropShadowBitmapEffect 
+                        Color="DarkGray" 
+                        Direction="270" 
+                        ShadowDepth="2" 
+                        Softness="0.3" 
+                        Opacity="1"/>
+            </Rectangle.BitmapEffect>
+        </Rectangle>
+
+        <!--SearchBox-->
+        <Grid Grid.Column="1" 
+              Grid.Row="1" 
+              Margin="15,12,15,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     Height="30"
+                     GotFocus="AutoCompleteOptions_GotFocus"
+                     LostFocus="AutoCompleteOptions_LostFocus"
+                     Text="Search..."
+                     FontStyle="Italic"
+                     Foreground="Gray"
+                     FontSize="13"
+                     x:Name="AutoCompleteOptions"
+                     Width="220" 
+                     TextAlignment="Left"                 
+                     >
+                <TextBox.Template>
+                    <ControlTemplate>
+                        <Border CornerRadius="5"
+                                       Padding="0"
+                                       BorderThickness="1"
+                                       BorderBrush="#c3c3c3" 
+                                       VerticalAlignment="{Binding ElementName=AutoCompleteOptions,Path=VerticalAlignment,Mode=OneWay}"
+                                       HorizontalAlignment="{Binding ElementName=AutoCompleteOptions,Path=VerticalAlignment,Mode=OneWay}" >
+                            <TextBox
+                                       Text="{Binding ElementName=AutoCompleteOptions,Path=Text,Mode=TwoWay}"
+                                       FontStyle="{Binding ElementName=AutoCompleteOptions,Path=FontStyle,Mode=TwoWay}"
+                                       Foreground="{Binding ElementName=AutoCompleteOptions,Path=Foreground,Mode=TwoWay}"
+                                       FontSize="{Binding ElementName=AutoCompleteOptions,Path=FontSize,Mode=TwoWay}"
+                                       Height="{Binding ElementName=AutoCompleteOptions,Path=Height,Mode=TwoWay}" 
+                                       Width="{Binding ElementName=AutoCompleteOptions,Path=Width,Mode=TwoWay}" 
+                                       Margin="2"
+                                       Padding="4,1,1,1"
+                                       HorizontalContentAlignment="Stretch"
+                                       VerticalContentAlignment="Stretch"
+                                       BorderThickness="0"                                       
+                                        />
+                        </Border>
+
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+
+            <Button Grid.Column="1"
+                Name="SearchButton1" 
+                Margin="5,0,5,0"
+                Height="18"
+                Width="18"
+                Click="SearchButton1_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="\Icon\CxListBox1\search.png"  />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Grid>
+
+        <Grid Grid.Column="3"
+              Grid.Row="1" 
+              Margin="15,12,15,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     Height="30"
+                     GotFocus="AutoCompleteOptions_GotFocus"
+                     LostFocus="AutoCompleteOptions_LostFocus"
+                     Text="Search..."
+                     FontStyle="Italic"
+                     Foreground="Gray"
+                     FontSize="13"
+                     x:Name="AutoCompleteUsers"
+                     Width="220" 
+                     TextAlignment="Left"                 
+                     >
+                <TextBox.Template>
+                    <ControlTemplate>
+                        <Border CornerRadius="5"
+                                       Padding="0"
+                                       BorderThickness="1"
+                                       BorderBrush="#c3c3c3" 
+                                       VerticalAlignment="{Binding ElementName=AutoCompleteOptions,Path=VerticalAlignment,Mode=OneWay}"
+                                       HorizontalAlignment="{Binding ElementName=AutoCompleteOptions,Path=VerticalAlignment,Mode=OneWay}" >
+                            <TextBox
+                                       Text="{Binding ElementName=AutoCompleteOptions,Path=Text,Mode=TwoWay}"
+                                       FontStyle="{Binding ElementName=AutoCompleteOptions,Path=FontStyle,Mode=TwoWay}"
+                                       Foreground="{Binding ElementName=AutoCompleteOptions,Path=Foreground,Mode=TwoWay}"
+                                       FontSize="{Binding ElementName=AutoCompleteOptions,Path=FontSize,Mode=TwoWay}"
+                                       Height="{Binding ElementName=AutoCompleteOptions,Path=Height,Mode=TwoWay}" 
+                                       Width="{Binding ElementName=AutoCompleteOptions,Path=Width,Mode=TwoWay}" 
+                                       Margin="2"
+                                       Padding="4,1,1,1"
+                                       HorizontalContentAlignment="Stretch"
+                                       VerticalContentAlignment="Stretch"
+                                       BorderThickness="0"                                       
+                                        />
+                        </Border>
+
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+
+            <Button Grid.Column="1"
+                Name="SearchButton2" 
+                Margin="5,0,5,0"
+                Height="18"
+                Width="18"
+                Click="SearchButton2_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="\Icon\CxListBox1\search.png"  />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Grid>
+
+        <!--ListBox-->
+        <ListBox Grid.Column="1"
+                 Grid.Row="2"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 Name="ListBoxOpions" 
+                 BorderBrush="Transparent"
+                 SelectionChanged="ListBoxOpions_SelectionChanged"
+                 
+                 /><!--Height="{Binding ElementName=RowForList,Path=ActualHeight}"-->
+
+        <ListBox Grid.Column="2"
+                 Grid.ColumnSpan="2"
+                 Grid.Row="2"
+                 Name="ListBoxUsers"     
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 SelectionChanged="ListBoxUsers_SelectionChanged"
+                 BorderBrush="Transparent"   
+                 Background="Transparent"
+                 SizeChanged="ListBoxUsers_SizeChanged"
+                
+                 /> <!--Height="{Binding ElementName=RowForList,Path=ActualHeight}"-->
+
+        <!--CentralArrow-->
+        <Image Grid.Column="2" 
+               Grid.Row="2"
+               Width="17"
+               Height="14"
+               Name="Arrow"    
+               HorizontalAlignment="Right"
+               Visibility="Collapsed"
+               Source="Icon\CxListBox1\ArrowCxList.png" 
+               VerticalAlignment="Top"
+               
+                  />
+    </Grid>
+</UserControl>

@@ -1,0 +1,110 @@
+﻿<UserControl x:Name="userControl" x:Class="CxControlLibrary.ClassificationButtonCollection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CxControlLibrary"
+             mc:Ignorable="d" 
+             d:DesignHeight="65" 
+             d:DesignWidth="570" 
+             Height="87"
+             Width="581"
+             Background="#3d4653"
+             >
+    <UserControl.Resources>
+        <Style TargetType="local:ClassificationButton">
+            <!-- <Setter Property="Selected" /> зробити ЗалежнуВластивість -->
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Roboto" />
+        </Style>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Width" Value="75" />
+            <Setter Property="Height" Value="64"  />
+            <Setter Property="BorderThickness" Value="0"  />
+            <Setter Property="Padding" Value="0,-6,4,1"  />
+            <Setter Property="HorizontalContentAlignment" Value="Center"  />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <!--<Style TargetType="ListBoxItem">
+            <Setter Property="Padding" Value="0,0,0,0" />
+        </Style>-->
+    </UserControl.Resources>
+    <Grid  Width="570" VerticalAlignment="Center" Height="76">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="GridLabelRow" Height="12"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"
+                   Name="TitleTextBlock"
+                   Text="SELECTED CLSSIFICATION" 
+                   Foreground="#ffffff" 
+                   Margin="10,0,0,0"
+                   FontSize="10"
+                   FontWeight="DemiBold"
+                   HorizontalAlignment="Left" 
+                   LineHeight="29.835px"
+                   Width="124"
+                   Height="11"/>
+        <local:ClassificationList Grid.Row="1" x:Name="CxClassificationList" />
+        <!--<StackPanel Grid.Row="1" Orientation="Horizontal">
+            <ListBox  Name="ButtonList" 
+                 Background="{Binding Background, ElementName=stackPanel}" 
+                 BorderThickness="0"
+                 VerticalContentAlignment="Bottom"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                 SelectionChanged="ButtonList_SelectionChanged" Margin="0,0,0,0"
+                 >
+               
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Name="StackButton" Orientation="Horizontal" Height="64"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBoxItem Height="{Binding ActualHeight, ElementName=Buttons}" Width="{Binding ActualWidth, ElementName=Buttons}">
+                    <local:ClassificationButton x:Name="Buttons" Color="#ec3a58" Text="Top secret" />
+                </ListBoxItem>
+                <ListBoxItem Height="{Binding ActualHeight, ElementName=Buttons}" Width="{Binding ActualWidth, ElementName=Buttons}">
+                    <local:ClassificationButton Color="#fc7854" Text="Top guarded long headljnjnjnjnj"  x:Name="testBtn2"/>
+                </ListBoxItem>
+                <ListBoxItem Height="{Binding ActualHeight, ElementName=Buttons}" Width="{Binding ActualWidth, ElementName=Buttons}">
+                    <local:ClassificationButton Color="#fa9d2e" Text="Guarded" x:Name="testBtn3"/>
+                </ListBoxItem>
+                <ListBoxItem Height="{Binding ActualHeight, ElementName=Buttons}" Width="{Binding ActualWidth, ElementName=Buttons}">
+                    <local:ClassificationButton Color="#fcde53" Text="Classified B"  x:Name="testBtn4"/>
+
+                </ListBoxItem >
+                <ListBoxItem Height="{Binding ActualHeight, ElementName=Buttons}" Width="{Binding ActualWidth, ElementName=Buttons}">
+                    <local:ClassificationButton Color="#48f796" Text="Classified B"  x:Name="testBtn5"/>
+                </ListBoxItem>
+                <ListBoxItem Height="{Binding ActualHeight, ElementName=Buttons}" Width="{Binding ActualWidth, ElementName=Buttons}">
+                    <local:ClassificationButton Color="#72eef9" Text="General"  x:Name="testBtn6"/>
+                </ListBoxItem >
+                <ListBoxItem Height="{Binding ActualHeight, ElementName=Buttons}" Width="{Binding ActualWidth, ElementName=Buttons}">
+                    <local:ClassificationButton Color="#ffffff" Text="None"  x:Name="testBtn7"/>
+                </ListBoxItem>
+
+            </ListBox>
+            <Button Name="MoreButton" Visibility="Collapsed" Click="MoreButton_Click" >
+                <Button.Template>
+                    <ControlTemplate>
+                        <StackPanel Width="37.9" Margin="0,15,0,0" >
+                            <Image 
+                                Width="19"
+                                Height="5"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" 
+                                        Source="Icon/ClassificationButtonCollection/more.png" Margin="0,0,0,-25"/>
+                            <TextBlock Text="More"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Foreground="#f8f8f8"
+                                        FontSize="11" Margin="0,24,0,0"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>-->
+    </Grid>
+</UserControl>
